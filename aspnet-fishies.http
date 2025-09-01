@@ -1,0 +1,6 @@
+@aspnet_fishies_HostAddress = http://localhost:5116
+
+GET {{aspnet_fishies_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
