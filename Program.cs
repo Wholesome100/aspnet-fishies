@@ -16,7 +16,37 @@ builder.Services.AddDbContext<FishDbContext>(options =>
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Fishies");
+app.MapGet("/", () =>
+{
+    var message = """
+    Welcome to aspnet-fishies!
+    This is a small project to get familiar with ASP.NET Core, Entity Framework,
+    and containerization.
+
+    This project presents a REST API layer, running within a container hosted on
+    Google Cloud Run.
+
+    Available Endpoints:
+    GET    /fish                  - List all fish
+    GET    /fish/{id}             - Get fish by ID
+    POST   /fish                  - Add a new fish
+    PUT    /fish/{id}             - Update a fish
+    DELETE /fish/{id}             - Remove a fish
+
+    Additional Features:
+    GET    /fish/search?name=...  - Search fish by name
+    GET    /fish/habitat/{type}   - Filter by habitat (Freshwater, Saltwater, Brackish)
+    GET    /fish/status/{status}  - Filter by conservation status
+    GET    /fish/random           - Get a random fish
+    GET    /fish/top-value/{n}    - Top N most valuable fish
+    GET    /stats                 - Summary stats
+
+    Example:
+    curl https://your-api-url/fish
+    """;
+
+    return Results.Text(message, "text/plain");
+});
 
 app.MapGet("/fish", async (FishDbContext db) => await db.Fish.ToListAsync());
 
