@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using aspnet_fishies.Data;
@@ -11,9 +12,11 @@ using aspnet_fishies.Data;
 namespace aspnet_fishies.Migrations
 {
     [DbContext(typeof(FishDbContext))]
-    partial class FishDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250901145800_SeedFishData")]
+    partial class SeedFishData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -83,7 +86,7 @@ namespace aspnet_fishies.Migrations
                             Description = "A popular fish found in the North Atlantic, valued for its flavor.",
                             Habitat = "Saltwater",
                             ImageUrl = "https://example.com/salmon.jpg",
-                            LastUpdated = new DateTime(2025, 9, 1, 10, 59, 0, 0, DateTimeKind.Utc),
+                            LastUpdated = new DateTime(2025, 9, 1, 14, 57, 59, 747, DateTimeKind.Utc).AddTicks(3228),
                             Location = "North Atlantic Ocean",
                             MarketValue = 15.5m,
                             Name = "Atlantic Salmon",
@@ -98,7 +101,7 @@ namespace aspnet_fishies.Migrations
                             Description = "Highly prized for sushi and sashimi, found in the Atlantic and Pacific.",
                             Habitat = "Saltwater",
                             ImageUrl = "https://example.com/tuna.jpg",
-                            LastUpdated = new DateTime(2025, 9, 1, 10, 59, 0, 0, DateTimeKind.Utc),
+                            LastUpdated = new DateTime(2025, 9, 1, 14, 57, 59, 747, DateTimeKind.Utc).AddTicks(3304),
                             Location = "Atlantic & Pacific Oceans",
                             MarketValue = 200.0m,
                             Name = "Bluefin Tuna",
@@ -113,7 +116,7 @@ namespace aspnet_fishies.Migrations
                             Description = "A freshwater fish known for its vibrant coloration and popularity among anglers.",
                             Habitat = "Freshwater",
                             ImageUrl = "https://example.com/trout.jpg",
-                            LastUpdated = new DateTime(2025, 9, 1, 10, 59, 0, 0, DateTimeKind.Utc),
+                            LastUpdated = new DateTime(2025, 9, 1, 14, 57, 59, 747, DateTimeKind.Utc).AddTicks(3306),
                             Location = "North American rivers and lakes",
                             MarketValue = 12.0m,
                             Name = "Rainbow Trout",
@@ -128,7 +131,7 @@ namespace aspnet_fishies.Migrations
                             Description = "A migratory fish with a complex life cycle, currently facing population decline.",
                             Habitat = "Brackish",
                             ImageUrl = "https://example.com/eel.jpg",
-                            LastUpdated = new DateTime(2025, 9, 1, 10, 59, 0, 0, DateTimeKind.Utc),
+                            LastUpdated = new DateTime(2025, 9, 1, 14, 57, 59, 747, DateTimeKind.Utc).AddTicks(3308),
                             Location = "European coastal and inland waters",
                             MarketValue = 30.0m,
                             Name = "European Eel",
@@ -143,7 +146,7 @@ namespace aspnet_fishies.Migrations
                             Description = "A widely farmed freshwater fish known for its mild flavor and affordability.",
                             Habitat = "Freshwater",
                             ImageUrl = "https://example.com/tilapia.jpg",
-                            LastUpdated = new DateTime(2025, 9, 1, 10, 59, 0, 0, DateTimeKind.Utc),
+                            LastUpdated = new DateTime(2025, 9, 1, 14, 57, 59, 747, DateTimeKind.Utc).AddTicks(3310),
                             Location = "Global aquaculture farms",
                             MarketValue = 5.0m,
                             Name = "Tilapia",
