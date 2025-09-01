@@ -50,4 +50,7 @@ app.MapGet("/", () =>
 
 app.MapGet("/fish", async (FishDbContext db) => await db.Fish.ToListAsync());
 
+app.MapGet("/fish/{id:int}", async (int id, FishDbContext db) =>
+    await db.Fish.FindAsync(id) is Fish fish ? Results.Ok(fish) : Results.NotFound());
+
 app.Run();
