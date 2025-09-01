@@ -74,7 +74,15 @@ app.MapPut("/fish/{id:int}", async (int id, Fish updated, FishDbContext db) =>
     return Results.Ok(fish);
 });
 
+app.MapDelete("/fish/{id:int}", async (int id, FishDbContext db) =>
+{
+    var fish = await db.Fish.FindAsync(id);
+    if (fish is null) return Results.NotFound();
 
+    db.Fish.Remove(fish);
+    await db.SaveChangesAsync();
+    return Results.NoContent();
+});
 
 
 app.Run();
