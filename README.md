@@ -1,10 +1,41 @@
 # ASP.NET Fishies
 
-This is a small project to get familiar with C# on the backend
+This is a small project to get familiar with **C#**, **ASP.NET Core**, **Entity Framework Core**, and **PostgreSQL** (via [Neon](https://neon.tech)).
 
-## GET Endpoints
+This backend exposes a REST API allowing users to create, read, update and delete records revolving around fish.
 
-These can all be accessed from the browser by typing the URL into the search bar.
+---
+
+## Prerequisites
+Before running this project, you’ll need:
+
+- [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download)
+- A free [Neon](https://neon.tech) Postgres account
+- Your Neon **connection string** (from the Neon dashboard)
+
+## Environment
+Clone the project into Visual Studio Community 2022.
+
+## .NET User Secrets
+This project uses the [.NET Secret Manager](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets) to keep credentials safe.
+
+Within your Neon account, make a new database and copy the connection string. 
+Your string will look similar to this: `Host=ep-xxx.us-east-2.aws.neon.tech;Database=neondb;Username=neonuser;Password=yourpassword;SSL Mode=Require`
+
+Take this string and run the following commands within the Visual Studio 2022 developer console:
+`dotnet user-secrets init`
+`dotnet user-secrets set "ConnectionStrings:DefaultConnection" "YOUR_CONNECTION_STRING"`
+
+## Running the App
+With the connection string set in user-secrets, set the build target to https from the dropdown next to the solid green play icon in Visual Studio.
+Run the application from this button and use the https: url in the console for reference.
+
+
+## Endpoints
+
+### GET Endpoints
+
+These can all be accessed from the browser by typing the URL into the search bar or by using curl commands.
 
 ### POST, PUT, DELETE Endpoints
 
