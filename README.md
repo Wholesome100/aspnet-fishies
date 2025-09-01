@@ -9,7 +9,7 @@ This backend exposes a REST API allowing users to create, read, update and delet
 ## Prerequisites
 Before running this project, you’ll need:
 
-- [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download)
+- [.NET 9 SDK](https://dotnet.microsoft.com/en-us/download)
 - A free [Neon](https://neon.tech) Postgres account
 - Your Neon **connection string** (from the Neon dashboard)
 
