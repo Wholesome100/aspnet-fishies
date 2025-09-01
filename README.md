@@ -8,10 +8,10 @@ These can all be accessed from the browser by typing the URL into the search bar
 
 ### POST, PUT, DELETE Endpoints
 
-The easiest way to test these is with the following curl commands:
+The easiest way to test these is with curl. Simply change <PORT> to the port number the app is running on locally, and paste the command into the terminal:
 
 **POST**
-`curl -X POST https://localhost:7014/fish \
+`curl -X POST https://localhost:<PORT>/fish \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Barramundi",
@@ -30,7 +30,7 @@ The easiest way to test these is with the following curl commands:
 
 **PUT**
 `
-curl -X PUT https://localhost:7014/fish/1 \
+curl -X PUT https://localhost:<PORT>/fish/1 \
   -H "Content-Type: application/json" \
   -d '{
     "id": 1,
@@ -49,4 +49,4 @@ curl -X PUT https://localhost:7014/fish/1 \
 `
 
 **DELETE**
-`curl -X DELETE https://localhost:7014/fish/1 -k`
+`curl -X DELETE https://localhost:<PORT>/fish/1 -k`
